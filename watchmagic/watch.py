@@ -83,7 +83,6 @@ class WatchMagics(Magics):
         recursive = args.recursive
         ignore_directories = self.default_ignore_directories
         case_sensitive = self.default_case_sensitive
-        import ipdb; ipdb.set_trace()
         my_event_handler = PatternMatchingEventHandler(
             patterns, ignore_patterns, ignore_directories, case_sensitive
         )
