@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: magicwatch
+Version: 0.1.0
+Summary: Add watchdog to IPython cells
+Home-page: https://github.com/gunnarvoet/magicwatch
+Author: Gunnar Voet
+Author-email: gvoet@ucsd.edu
+License: GNU GPL v3
+Project-URL: Documentation, https://github.com/gunnarvoet/magicwatch
+Description: # magicwatch
+        
+        Adds `%%watch` magic to jupyter notebooks that watches a given directory for file changes. Once a file is changed, the cell is re-evaluated.
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2020-06-18)
+        ------------------
+        
+        * Initial release.
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: IPython
+Classifier: License :: OSI Approved :: GNU GPL v3 License
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.0
+Description-Content-Type: text/x-rst
