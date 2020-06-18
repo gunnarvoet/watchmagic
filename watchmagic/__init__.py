@@ -1,41 +1,41 @@
 # Copyright 2020 Gunnar Voet
 #
-# This file is part of magicwatch.
+# This file is part of watchmagic.
 #
-# magicwatch is free software: you can redistribute it and/or modify
+# watchmagic is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or any later version.
 #
-# magicwatch is distributed in the hope that it will be useful,
+# watchmagic is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with magicwatch.  If not, see <http://www.gnu.org/licenses/>.
+# along with watchmagic.  If not, see <http://www.gnu.org/licenses/>.
 
 
-"""`magicwatch` adds `%%watch` magic to jupyter notebooks that watches a given directory for file changes. Once a file is changed, the cell is re-evaluated.
+"""`watchmagic` adds `%%watch` magic to jupyter notebooks that watches a given directory for file changes. Once a file is changed, the cell is re-evaluated.
 
 ## License
 
 Copyright 2020 Gunnar Voet
 
-magicwatch is free software: you can redistribute it and/or modify
+watchmagic is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or any later version.
 
-magicwatch is distributed in the hope that it will be useful,
+watchmagic is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with magicwatch.  If not, see <http://www.gnu.org/licenses/>.
+along with watchmagic.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Installation
 
-Clone the package from https://github.com/gunnarvoet/magicwatch. Then install `magicwatch`
+Clone the package from https://github.com/gunnarvoet/watchmagic. Then install `watchmagic`
 by changing into the root directory and running
 
 >>> python setup.py install
@@ -46,7 +46,7 @@ or using [pip](https://pypi.org/project/pip/)
 
 In the notebook run
 ```python
-%load_ext magicwatch
+%load_ext watchmagic
 ```
 Now you can use the magic by putting `%%watch path` on the first line of the
 cell you are working on. `path` is the path where to watch for file changes.
@@ -63,7 +63,7 @@ __author__ = "Gunnar Voet"
 __email__ = "gvoet@ucsd.edu"
 __version__ = "0.1.0"
 
-from magicwatch.watch import watch
+from watchmagic.watch import watch
 
 def load_ipython_extension(ipython):
     ipython.register_magic_function(watch, 'cell')

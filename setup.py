@@ -7,11 +7,11 @@ with open("HISTORY.rst") as history_file:
     history = history_file.read()
 
 setup(
-    name="magicwatch",
+    name="watchmagic",
     version="0.1.0",
     author="Gunnar Voet",
     author_email="gvoet@ucsd.edu",
-    url="https://github.com/gunnarvoet/magicwatch",
+    url="https://github.com/gunnarvoet/watchmagic",
     license="GNU GPL v3",
     # Description
     description="Add watchdog to IPython cells",
@@ -28,7 +28,7 @@ setup(
     zip_safe=False,
     platforms=["any"],  # or more specific, e.g. "win32", "cygwin", "osx"
     # Metadata
-    project_urls={"Documentation": "https://github.com/gunnarvoet/magicwatch"},
+    project_urls={"Documentation": "https://github.com/gunnarvoet/watchmagic"},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: IPython",
