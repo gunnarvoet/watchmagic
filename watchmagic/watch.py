@@ -5,9 +5,10 @@
 import time
 
 from IPython.core.magic import Magics, cell_magic, magics_class
-from IPython.core.magic_arguments import argument, magic_arguments, parse_argstring
+from IPython.core.magic_arguments import (argument, magic_arguments,
+                                          parse_argstring)
 from IPython.display import clear_output
-from traitlets import List, Bool
+from traitlets import Bool, List
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 
