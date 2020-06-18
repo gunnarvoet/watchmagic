@@ -23,11 +23,15 @@ along with watchmagic.  If not, see <http://www.gnu.org/licenses/>.
 Clone the package from https://github.com/gunnarvoet/watchmagic. Then install `watchmagic`
 by changing into the root directory and running
 
->>> python setup.py install
+```shell
+python setup.py install
+```
 
 or using [pip](https://pypi.org/project/pip/)
 
->>> pip install .
+```shell
+pip install .
+```
 
 ## Usage
 
@@ -35,12 +39,10 @@ In the notebook run
 ```python
 %load_ext watchmagic
 ```
-Now you can use the magic by putting `%%watch path` on the first line of the
-cell you are working on. `path` is the path where to watch for file changes.
-Note that it is not provided as a string but rather straight as if you were on
-the command line of your shell. For example:
+Now you can use the magic by simply putting `%%watch` on the first line of the
+cell you are working on. This will watch the current directory and its subdirectories for file changes. For example:
 ```python
-%%watch ./
+%%watch
 print('hello world')
 ```
-will watch the current directory.
+will watch the current directory and run the print statement on any file changes. Interrupt the kernel to quit watching for file changes.
