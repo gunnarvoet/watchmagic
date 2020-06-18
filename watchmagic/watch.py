@@ -28,6 +28,7 @@ def watch(line, cell):
     def on_modified(event):
         clear_output()
         print(f"watch: {event.src_path} has been modified")
+        print('Interrupt kernel to stop (i-i in notebook, ctrl-c in console).')
         run_function()
 
     my_event_handler.on_modified = on_modified
@@ -35,6 +36,13 @@ def watch(line, cell):
     my_observer = Observer()
     my_observer.schedule(my_event_handler, path, recursive=recursive)
 
+    if line == '.':
+        watchdir = 'current directory'
+    else:
+        watchdir = line
+
+    print(f'Watching {watchdir} for file changes.')
+    print('Interrupt kernel to stop (i-i in notebook, ctrl-c in console).')
     # initialize by running the cell once
     ip = get_ipython()
     ip.run_cell(cell)
