@@ -110,3 +110,16 @@ optional arguments:
                         ignore files containing IGNORE_PATTERNS when
                         watching for file changes.
 ```
+
+## Config
+The following default settings can be changed in `ipython_config.py`:
+```
+#------------------------------------------------------------------------------
+# WatchMagics configuration
+#------------------------------------------------------------------------------
+c.WatchMagics.default_patterns = ['*.py']
+c.WatchMagics.default_ignore_patterns = ['*.ipynb']
+c.WatchMagics.default_case_sensitive = False
+c.WatchMagics.default_ignore_directories = True
+```
+Command line options (if provided) will override the default settings.

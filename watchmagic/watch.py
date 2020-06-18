@@ -7,12 +7,20 @@ import time
 from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.core.magic_arguments import argument, magic_arguments, parse_argstring
 from IPython.display import clear_output
+from traitlets import List, Bool
 from watchdog.events import PatternMatchingEventHandler
 from watchdog.observers import Observer
 
 
 @magics_class
 class WatchMagics(Magics):
+
+    # allow for setting default values in ipython_config.py:
+    default_patterns = List([], config=True)
+    default_ignore_patterns = List([], config=True)
+    default_case_sensitive=Bool(False, config=True)
+    default_ignore_directories=Bool(True, config=True)
+
     @magic_arguments()
     @argument(
         "-p",
@@ -29,8 +37,8 @@ class WatchMagics(Magics):
         "-r",
         "--recursive",
         dest="recursive",
-        action="store_true",
         default=True,
+        action="store_true",
         help="""
         include subdirectories recursively when watching for file changes.\n
         This is the default behaviour.
@@ -49,7 +57,7 @@ class WatchMagics(Magics):
         "--patterns",
         dest="patterns",
         type=str,
-        nargs='*',
+        nargs="*",
         help="""
         look for files with these PATTERNS.
         """,
@@ -58,22 +66,24 @@ class WatchMagics(Magics):
         "--ignore",
         dest="ignore_patterns",
         type=str,
-        nargs='*',
+        nargs="*",
         help="""
         ignore files containing IGNORE_PATTERNS when watching for file changes.
         """,
     )
     @cell_magic
     def watch(self, line, cell):
-        """watch for file changes and re-evaluate current cell."""
+        """Watch directory and re-evaluate current cell on file changes."""
         args = parse_argstring(self.watch, line)
-        if args.path:
-            path = args.path
+        path = args.path
+        patterns = self.parse_defaults(args.patterns, self.default_patterns)
+        ignore_patterns = self.parse_defaults(
+            args.ignore_patterns, self.default_ignore_patterns
+        )
         recursive = args.recursive
-        patterns = args.patterns
-        ignore_patterns = args.ignore_patterns
-        ignore_directories = True
-        case_sensitive = True
+        ignore_directories = self.default_ignore_directories
+        case_sensitive = self.default_case_sensitive
+        import ipdb; ipdb.set_trace()
         my_event_handler = PatternMatchingEventHandler(
             patterns, ignore_patterns, ignore_directories, case_sensitive
         )
@@ -115,3 +125,12 @@ class WatchMagics(Magics):
         except KeyboardInterrupt:
             my_observer.stop()
         my_observer.join()
+
+    def parse_defaults(self, argin, default):
+        if argin:
+            return argin
+        else:
+            if default:
+                return default
+            else:
+                return None
