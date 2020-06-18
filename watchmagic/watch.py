@@ -46,17 +46,19 @@ class WatchMagics(Magics):
         """,
     )
     @argument(
-        "--pattern",
-        dest="pattern",
+        "--patterns",
+        dest="patterns",
         type=str,
+        nargs='*',
         help="""
-        look for files with this PATTERN.
+        look for files with these PATTERNS.
         """,
     )
     @argument(
         "--ignore",
         dest="ignore_patterns",
         type=str,
+        nargs='*',
         help="""
         ignore files containing IGNORE_PATTERNS when watching for file changes.
         """,
@@ -68,11 +70,10 @@ class WatchMagics(Magics):
         if args.path:
             path = args.path
         recursive = args.recursive
-        patterns = args.pattern
+        patterns = args.patterns
         ignore_patterns = args.ignore_patterns
         ignore_directories = True
         case_sensitive = True
-
         my_event_handler = PatternMatchingEventHandler(
             patterns, ignore_patterns, ignore_directories, case_sensitive
         )
@@ -84,7 +85,7 @@ class WatchMagics(Magics):
         def on_modified(event):
             clear_output()
             print(f"watch: {event.src_path} has been modified")
-            print("Interrupt kernel to stop (i-i in notebook, ctrl-c in console).")
+            # print("Interrupt kernel to stop (i-i in notebook, ctrl-c in console).")
             run_again()
 
         my_event_handler.on_modified = on_modified
