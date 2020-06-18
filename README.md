@@ -46,3 +46,24 @@ cell you are working on. This will watch the current directory and its subdirect
 print('hello world')
 ```
 will watch the current directory and run the print statement on any file changes. Interrupt the kernel to quit watching for file changes.
+
+## Options
+Several command line options exist. Run `%%watch?` to display the following help screen:
+
+```
+%watch [-p PATH] [-r] [-nr] [--patterns [PATTERNS [PATTERNS ...]]]
+             [--ignore [IGNORE_PATTERNS [IGNORE_PATTERNS ...]]]
+
+watch for file changes and re-evaluate current cell.
+
+optional arguments:
+  -p PATH, --path PATH  provides the PATH to watch for file changes. If not provided, the current directory will be
+                        watched.
+  -r, --recursive       include subdirectories recursively when watching for file changes. This is the default
+                        behaviour.
+  -nr, --non-recursive  do not include subdirectories when watching for file changes.
+  --patterns <[PATTERNS [PATTERNS ...]]>
+                        look for files with these PATTERNS.
+  --ignore <[IGNORE_PATTERNS [IGNORE_PATTERNS ...]]>
+                        ignore files containing IGNORE_PATTERNS when watching for file changes.
+```
