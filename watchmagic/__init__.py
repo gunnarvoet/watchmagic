@@ -63,8 +63,8 @@ __author__ = "Gunnar Voet"
 __email__ = "gvoet@ucsd.edu"
 __version__ = "0.1.0"
 
-from watchmagic.watch import watch
+from watchmagic.watch import WatchMagics
 
 
 def load_ipython_extension(ipython):
-    ipython.register_magic_function(watch, "cell")
+    ipython.register_magics(WatchMagics)
