@@ -1,8 +1,0 @@
-README.rst
-setup.py
-magicwatch.egg-info/PKG-INFO
-magicwatch.egg-info/SOURCES.txt
-magicwatch.egg-info/dependency_links.txt
-magicwatch.egg-info/not-zip-safe
-magicwatch.egg-info/requires.txt
-magicwatch.egg-info/top_level.txt
