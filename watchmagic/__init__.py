@@ -65,5 +65,6 @@ __version__ = "0.1.0"
 
 from watchmagic.watch import watch
 
+
 def load_ipython_extension(ipython):
-    ipython.register_magic_function(watch, 'cell')
+    ipython.register_magic_function(watch, "cell")

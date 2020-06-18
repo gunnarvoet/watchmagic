@@ -5,17 +5,15 @@
 import time
 
 from IPython.display import clear_output
-from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
+from watchdog.observers import Observer
 
 
 def watch(line, cell):
-    path=line
-    recursive=True
-    patterns="*.py"
-    ignore_patterns=""
-    func=None
-    parameters=None
+    path = line
+    recursive = True
+    patterns = "*.py"
+    ignore_patterns = ""
     ignore_directories = True
     case_sensitive = True
 
@@ -57,4 +55,3 @@ def watch(line, cell):
 #     `register_magic_function` method of the shell
 #     instance."""
 #     ipython.register_magic_function(watch, 'cell')
-
