@@ -21,7 +21,7 @@ class WatchMagics(Magics):
         type=str,
         default="./",
         help="""
-        provides the PATH to watch for file changes. If not provided, the
+        provides the PATH to watch for file changes. If not provided, the\n
         current directory will be watched.
         """,
     )
@@ -32,8 +32,8 @@ class WatchMagics(Magics):
         action="store_true",
         default=True,
         help="""
-        include subdirectories recursively when watching for file changes. This
-        is the default behaviour.
+        include subdirectories recursively when watching for file changes.\n
+        This is the default behaviour.
         """,
     )
     @argument(
