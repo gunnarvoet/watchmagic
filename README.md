@@ -1,5 +1,4 @@
-watchmagic
-==========
+# watchmagic
 
 `watchmagic` adds `%%watch` magic to jupyter notebooks that watches a given directory for file changes. Once a file is changed, the cell is re-evaluated.
 
@@ -29,6 +28,8 @@ by changing into the root directory and running
 or using [pip](https://pypi.org/project/pip/)
 
 >>> pip install .
+
+## Usage
 
 In the notebook run
 ```python
