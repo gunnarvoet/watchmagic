@@ -127,6 +127,7 @@ class WatchMagics(Magics):
         my_observer.join()
 
     def parse_defaults(self, argin, default):
+        """Decide which parameters to use."""
         if argin:
             return argin
         else:

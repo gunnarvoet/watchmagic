@@ -32,7 +32,7 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: IPython",
-        "License :: OSI Approved :: GNU GPL v3 License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Natural Language :: English",
         "Topic :: Software Development",
         "Programming Language :: Python :: 3",

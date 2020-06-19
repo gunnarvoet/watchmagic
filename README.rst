@@ -1,20 +1,5 @@
-# Copyright 2020 Gunnar Voet
-#
-# This file is part of watchmagic.
-#
-# watchmagic is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or any later version.
-#
-# watchmagic is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public License
-# along with watchmagic.  If not, see <http://www.gnu.org/licenses/>.
-
-"""
+watchmagic
+==========
 ``watchmagic`` adds ``%%watch`` magic to IPython. When added to a cell, it
 watches a given directory for file changes. Once a file is changed, the cell is
 re-evaluated.
@@ -142,14 +127,3 @@ The following default settings can be changed in ``ipython_config.py``::
     c.WatchMagics.default_ignore_directories = True
 
 Command line options (if provided) will override the default settings.
-"""
-
-__author__ = "Gunnar Voet"
-__email__ = "gvoet@ucsd.edu"
-__version__ = "0.1.0"
-
-from watchmagic.watch import WatchMagics
-
-
-def load_ipython_extension(ipython):
-    ipython.register_magics(WatchMagics)
