@@ -26,7 +26,7 @@ with ``watchmagic``.  If not, see <http://www.gnu.org/licenses/>.
 
 Installation
 ------------
-Install via [pip](https://pypi.org/project/pip/):
+Install via `pip <https://pypi.org/project/pip/>`:
 
 .. code-block:: shell
 
