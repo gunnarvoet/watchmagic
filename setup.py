@@ -24,7 +24,7 @@ setup(
         "IPython",
     ],
     # Packaging
-    packages=find_packages(include=["watchdog"], exclude=["*.tests"]),
+    packages=find_packages(include=["watchmagic"], exclude=["*.tests"]),
     zip_safe=False,
     platforms=["any"],  # or more specific, e.g. "win32", "cygwin", "osx"
     # Metadata
