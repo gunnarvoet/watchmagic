@@ -146,7 +146,7 @@ Command line options (if provided) will override the default settings.
 
 __author__ = "Gunnar Voet"
 __email__ = "gvoet@ucsd.edu"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from watchmagic.watch import WatchMagics
 
